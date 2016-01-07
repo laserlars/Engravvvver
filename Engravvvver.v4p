@@ -1,11 +1,11 @@
 <!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45beta33.7.dtd" >
    <PATCH nodename="C:\Users\Lars\OneDrive\my patches\Engravvvver\Engravvvver.v4p" systemname="Engravvvver" filename="C:\Users\Admin\OneDrive\my patches\Engravvvver\Engravvvver.v4p" scrollx="0" scrolly="-360">
-   <BOUNDS type="Window" left="8628" top="864" width="10776" height="10416">
+   <BOUNDS type="Window" left="0" top="0" width="10776" height="10416">
    </BOUNDS>
    <PACK Name="addonpack" Version="33.7.0">
    </PACK>
    <NODE systemname="Writer (String)" filename="%VVVV%\lib\nodes\modules\String\Writer (String).v4p" nodename="Writer (String)" componentmode="Hidden" id="0">
-   <BOUNDS type="Node" left="2181" top="8916" width="1740" height="270">
+   <BOUNDS type="Node" left="2181" top="8916" width="1848" height="276">
    </BOUNDS>
    <PIN pinname="Append" slicecount="1" values="1">
    </PIN>
@@ -421,7 +421,7 @@
    </PIN>
    </NODE>
    <NODE systemname="PrepareToWrite" filename="sub\PrepareToWrite.v4p" nodename="sub\PrepareToWrite.v4p" componentmode="Hidden" id="116">
-   <BOUNDS type="Node" left="2174" top="8443" width="0" height="0">
+   <BOUNDS type="Node" left="2174" top="8443" width="1428" height="276">
    </BOUNDS>
    <BOUNDS type="Box" left="30" top="6254" width="6979" height="4378">
    </BOUNDS>
@@ -526,8 +526,8 @@
    </LINK>
    <LINK srcnodeid="56" srcpinname="Y Output Value" dstnodeid="129" dstpinname="Input 1">
    </LINK>
-   <NODE systemname="OR (Boolean)" nodename="OR (Boolean)" componentmode="Hidden" id="130">
-   <BOUNDS type="Node" left="1365" top="2295" width="100" height="100">
+   <NODE systemname="OR (Boolean)" nodename="OR (Boolean)" componentmode="Hidden" id="130" hiddenwhenlocked="1">
+   <BOUNDS type="Node" left="1413" top="2283" width="100" height="100">
    </BOUNDS>
    <PIN pinname="Input 1" visible="1">
    </PIN>
@@ -539,9 +539,9 @@
    <LINK srcnodeid="56" srcpinname="Y Output Value" dstnodeid="130" dstpinname="Input 1">
    </LINK>
    <LINK srcnodeid="51" srcpinname="Y Output Value" dstnodeid="130" dstpinname="Input 2" linkstyle="VHV" hiddenwhenlocked="1">
-   <LINKPOINT x="9060" y="1050">
+   <LINKPOINT x="9076" y="1046">
    </LINKPOINT>
-   <LINKPOINT x="1695" y="1050">
+   <LINKPOINT x="1727" y="1042">
    </LINKPOINT>
    </LINK>
    <LINK srcnodeid="130" srcpinname="Output" dstnodeid="129" dstpinname="Input 2">
