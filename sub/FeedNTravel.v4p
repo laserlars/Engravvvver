@@ -1,0 +1,219 @@
+<!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45beta33.7.dtd" >
+   <PATCH nodename="C:\Users\Admin\OneDrive\my patches\Engravvvver\sub\FeedNTravel.v4p" systemname="FeedNTravel" filename="C:\Users\Admin\OneDrive\my patches\LaserEngravvvver\sub\FeedNTravel.v4p" scrollx="0" scrolly="-360">
+   <BOUNDS type="Window" left="21240" top="3750" width="6840" height="7650">
+   </BOUNDS>
+   <PACK Name="addonpack" Version="33.7.0">
+   </PACK>
+   <NODE systemname="AsString (Value)" nodename="AsString (Value)" componentmode="Hidden" id="0">
+   <BOUNDS type="Node" left="2565" top="855" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Input" visible="1">
+   </PIN>
+   <PIN pinname="SubType" slicecount="1" values="|Integer (MinInt .. MaxInt)|">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   </NODE>
+   <NODE systemname="Insert (String)" filename="%VVVV%\lib\nodes\plugins\VVVV.Nodes.dll" nodename="Insert (String)" componentmode="Hidden" id="1">
+   <BOUNDS type="Node" left="1236" top="1896" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Input" visible="1" slicecount="1" values="|G21 (use metrics)&cr;&lf;M05 (Laser OFF)&cr;&lf;G1 F (Set Feed Rate)&cr;&lf;G0 F  (Set Travel Rate) &cr;&lf;X0 Y0 (Workspace Home)&cr;&lf;M03 (Laser ON)|">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   <PIN pinname="Text to Insert" visible="1">
+   </PIN>
+   <PIN pinname="Position" slicecount="1" values="40">
+   </PIN>
+   </NODE>
+   <NODE systemname="Insert (String)" filename="%VVVV%\lib\nodes\plugins\VVVV.Nodes.dll" nodename="Insert (String)" componentmode="Hidden" id="2">
+   <BOUNDS type="Node" left="1236" top="2226" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Text to Insert" visible="1">
+   </PIN>
+   <PIN pinname="Input" visible="1" slicecount="1" values="|G21 (use metrics)&cr;&lf;M05 (Laser OFF)&cr;&lf;G1 F (Set Feed Rate)&cr;&lf;G0 F  (Set Travel Rate) &cr;&lf;X0 Y0 (Workspace Home)&cr;&lf;M03 (Laser ON)|">
+   </PIN>
+   <PIN pinname="Position" slicecount="1" values="64">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   </NODE>
+   <NODE systemname="AsString (Value)" nodename="AsString (Value)" componentmode="Hidden" id="3">
+   <BOUNDS type="Node" left="3420" top="840" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Input" visible="1" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="SubType" slicecount="1" values="|Integer (MinInt .. MaxInt)|">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="0" srcpinname="Output" dstnodeid="1" dstpinname="Text to Insert" linkstyle="VHV">
+   <LINKPOINT x="2592" y="1812">
+   </LINKPOINT>
+   <LINKPOINT x="1740" y="1812">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="1" srcpinname="Output" dstnodeid="2" dstpinname="Input">
+   </LINK>
+   <LINK srcnodeid="3" srcpinname="Output" dstnodeid="2" dstpinname="Text to Insert" linkstyle="VHV">
+   <LINKPOINT x="3444" y="2196">
+   </LINKPOINT>
+   <LINKPOINT x="1740" y="2196">
+   </LINKPOINT>
+   </LINK>
+   <NODE id="4" systemname="IOBox (String)" componentmode="InABox" nodename="IOBox (String)">
+   <PIN pinname="Descriptive Name" slicecount="1" values="Output">
+   </PIN>
+   <BOUNDS type="Box" left="1236" top="5130" width="4440" height="1608">
+   </BOUNDS>
+   <BOUNDS type="Node" left="1236" top="5130" width="750" height="240">
+   </BOUNDS>
+   <PIN pinname="Input String" visible="1" slicecount="1" values="|(Created with vvvv on 04.12.2015 12:22:17) &cr;&lf;G21 (use metrics)&cr;&lf;M05 (Laser OFF)&cr;&lf;G1 F35 (Set Feed Rate)&cr;&lf;G0 F1200  (Set Travel Rate) &cr;&lf;X0 Y0 (Workspace Home)&cr;&lf;M03 (Laser ON)|">
+   </PIN>
+   </NODE>
+   <NODE id="5" systemname="IOBox (Value Advanced)" componentmode="InABox" nodename="IOBox (Value Advanced)">
+   <PIN pinname="Descriptive Name" slicecount="1" values="Feed">
+   </PIN>
+   <BOUNDS type="Box" left="2565" top="470" width="750" height="240">
+   </BOUNDS>
+   <BOUNDS type="Node" left="2565" top="470" width="750" height="240">
+   </BOUNDS>
+   </NODE>
+   <LINK srcnodeid="5" srcpinname="Y Output Value" dstnodeid="0" dstpinname="Input">
+   </LINK>
+   <NODE id="6" systemname="IOBox (Value Advanced)" componentmode="InABox" nodename="IOBox (Value Advanced)">
+   <PIN pinname="Descriptive Name" slicecount="1" values="Travel">
+   </PIN>
+   <BOUNDS type="Box" left="3405" top="500" width="750" height="240">
+   </BOUNDS>
+   <BOUNDS type="Node" left="3405" top="500" width="750" height="240">
+   </BOUNDS>
+   </NODE>
+   <LINK srcnodeid="6" srcpinname="Y Output Value" dstnodeid="3" dstpinname="Input">
+   </LINK>
+   <NODE nodename="IOBox (String)" componentmode="InABox" id="7" systemname="IOBox (String)">
+   <BOUNDS type="Box" left="129" top="288" width="1950" height="1455">
+   </BOUNDS>
+   <BOUNDS type="Node" left="129" top="288" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Input String" slicecount="1" visible="1" values="|G21 (use metrics)&cr;&lf;M05 (Laser OFF)&cr;&lf;G1 F (Set Feed Rate)&cr;&lf;G0 F  (Set Travel Rate) &cr;&lf;X0 Y0 (Workspace Home)&cr;&lf;M03 (Laser ON)|">
+   </PIN>
+   <PIN pinname="Default" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="File Mask" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Maximum Characters" slicecount="1" values="-1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="7" srcpinname="Output String" dstnodeid="1" dstpinname="Input">
+   </LINK>
+   <NODE systemname="Insert (String)" filename="%VVVV%\lib\nodes\plugins\VVVV.Nodes.dll" nodename="Insert (String)" componentmode="Hidden" id="8">
+   <BOUNDS type="Node" left="1224" top="3234" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Text to Insert" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Input" visible="1" slicecount="1" values="|G21 (use metrics)&cr;&lf;M05 (Laser OFF)&cr;&lf;G1 F (Set Feed Rate)&cr;&lf;G0 F  (Set Travel Rate) &cr;&lf;X0 Y0 (Workspace Home)&cr;&lf;M03 (Laser ON)|">
+   </PIN>
+   <PIN pinname="Position" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="2" srcpinname="Output" dstnodeid="8" dstpinname="Input">
+   </LINK>
+   <NODE systemname="Date (Astronomy)" filename="%VVVV%\addonpack\lib\nodes\plugins\Date.dll" nodename="Date (Astronomy)" componentmode="Hidden" id="11">
+   <BOUNDS type="Node" left="1860" top="2400" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Current Date" visible="1">
+   </PIN>
+   <PIN pinname="CultureInfo" slicecount="1" values="de-DE">
+   </PIN>
+   </NODE>
+   <NODE systemname="Add (String)" nodename="Add (String)" componentmode="Hidden" id="12">
+   <BOUNDS type="Node" left="1692" top="2832" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Input Count" slicecount="1" values="3">
+   </PIN>
+   <PIN pinname="Input 2" visible="1">
+   </PIN>
+   <PIN pinname="Input 1" slicecount="1" values="|(Engravvvver - |">
+   </PIN>
+   <PIN pinname="Input 3" slicecount="1" values="|) &cr;&lf;(visit vvvv.org)&cr;&lf;|">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   <PIN pinname="Intersperse" slicecount="1" values="None">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="11" srcpinname="Current Date" dstnodeid="12" dstpinname="Input 2">
+   </LINK>
+   <LINK srcnodeid="12" srcpinname="Output" dstnodeid="8" dstpinname="Text to Insert">
+   </LINK>
+   <NODE systemname="InsertSlice (String)" nodename="InsertSlice (String)" componentmode="Hidden" id="14">
+   <BOUNDS type="Node" left="1236" top="4068" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Spread" visible="1">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   <PIN pinname="Index" slicecount="1" values="1">
+   </PIN>
+   <PIN pinname="Input" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="8" srcpinname="Output" dstnodeid="14" dstpinname="Spread">
+   </LINK>
+   <LINK srcnodeid="14" srcpinname="Output" dstnodeid="4" dstpinname="Input String">
+   </LINK>
+   <NODE nodename="IOBox (String)" componentmode="InABox" id="15" systemname="IOBox (String)">
+   <BOUNDS type="Box" left="4704" top="372" width="1704" height="876">
+   </BOUNDS>
+   <BOUNDS type="Node" left="4704" top="372" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Input String" slicecount="1" visible="1" values="|M05 (Laser OFF) &cr;&lf;G00 (Travel Mode) &cr;&lf;G28 (Machine Home)|">
+   </PIN>
+   <PIN pinname="Default" slicecount="1" values="text">
+   </PIN>
+   <PIN pinname="File Mask" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Maximum Characters" slicecount="1" values="-1">
+   </PIN>
+   <PIN pinname="Output String" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="15" srcpinname="Output String" dstnodeid="14" dstpinname="Input" linkstyle="VHV">
+   <LINKPOINT x="4768" y="3624">
+   </LINKPOINT>
+   <LINKPOINT x="1484" y="3696">
+   </LINKPOINT>
+   </LINK>
+   <NODE nodename="IOBox (String)" componentmode="InABox" id="16" systemname="IOBox (String)">
+   <BOUNDS type="Node" left="4728" top="24" width="516" height="240">
+   </BOUNDS>
+   <BOUNDS type="Box" left="4728" top="24" width="516" height="240">
+   </BOUNDS>
+   <PIN pinname="Input String" visible="0" slicecount="1" values="outro">
+   </PIN>
+   <PIN pinname="Output String" visible="0">
+   </PIN>
+   <PIN pinname="Show Grid" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="String Type" slicecount="1" values="MultiLine">
+   </PIN>
+   </NODE>
+   <NODE nodename="IOBox (String)" componentmode="InABox" id="17" systemname="IOBox (String)">
+   <BOUNDS type="Node" left="276" top="0" width="468" height="240">
+   </BOUNDS>
+   <BOUNDS type="Box" left="276" top="0" width="468" height="240">
+   </BOUNDS>
+   <PIN pinname="Input String" visible="0" slicecount="1" values="intro">
+   </PIN>
+   <PIN pinname="Output String" visible="0">
+   </PIN>
+   <PIN pinname="Show Grid" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="String Type" slicecount="1" values="MultiLine">
+   </PIN>
+   </NODE>
+   </PATCH>
