@@ -2,13 +2,14 @@
 Engravvvver GCode Generator
 
 The Engravvvver is a vvvv patch that reads a pixel image (.BMP / .JPG / .PNG / etc)
-an converts it into a machine-readable GCode path for raster engraving.
+an converts it into a machine-readable GCode path for 2D raster engraving.
 
 Credits go to Jens A.E. for his help with raw data spreads, which made the engravvvver work
 a lot faster and also enabled it to deal with >4k resolution. 
 
 You can
-- set the laser power (min/max)
+- set the laser power (min/max) from 0-255
+- set the travel and feed rate
 - set the scan resolution (pixel size in mm),
 - define a cutout shape (quad/circle) as well as cutout speed and power
 
